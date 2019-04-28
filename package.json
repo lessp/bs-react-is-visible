@@ -1,0 +1,58 @@
+{
+  "name": "bs-react-is-visible",
+  "description": "A small library for ReasonReact to know if an element is visible on screen or not",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack -w",
+    "webpack:production": "NODE_ENV=production webpack",
+    "server": "webpack-dev-server",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "BuckleScript",
+    "ReasonML",
+    "intersection observer",
+    "visible",
+    "invisible",
+    "visibility",
+    "on screen"
+  ],
+  "author": "lessp <ekander.tom@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.x",
+    "reason-react": ">=0.7.0"
+  },
+  "dependencies": {
+    "@glennsl/bs-json": "^3.0.0",
+    "react-is-visible": "^1.0.3"
+  },
+  "devDependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-is-visible": "^1.0.3",
+    "reason-react": ">=0.7.0",
+    "@babel/runtime": "^7.4.4",
+    "bs-platform": "^5.0.1",
+    "bs-webapi": "^0.14.2",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "homepage": "https://github.com/lessp/bs-react-is-visible#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lessp/bs-react-is-visible.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lessp/bs-react-is-visible/issues"
+  }
+}

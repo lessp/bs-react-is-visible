@@ -1,0 +1,19 @@
+{
+  "name": "bs-react-is-visible",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": [
+    {
+      "module": "commonjs"
+    }
+  ],
+  "suffix": ".bs.js",
+  "namespace": true,
+  "bs-dependencies": ["reason-react", "@glennsl/bs-json", "bs-webapi"],
+  "refmt": 3
+}
