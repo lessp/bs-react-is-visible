@@ -1,4 +1,6 @@
 .swp
+/dist
+.cache
 .DS_Store
 .merlin
 .bsb.lock
