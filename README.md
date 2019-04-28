@@ -14,7 +14,7 @@ Add `bs-react-is-visible` to `bs-dependencies` in `bsconfig.json`
 
 ## Usage
 
-```reasonml
+```reason
 [@react.component]
 let make = () => {
   let (isVisible, ref) = ReactIsVisible.useIsVisible();
