@@ -1,5 +1,7 @@
 # React Is Visible for ReasonReact
 
+[![npm version](https://badge.fury.io/js/bs-react-is-visible.svg)](https://badge.fury.io/js/bs-react-is-visible)
+
 A small library that lets you know whether a component is visible on screen or not.
 
 Uses the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) which you may want to [polyfill](#polyfill).
