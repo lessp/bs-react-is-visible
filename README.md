@@ -4,6 +4,8 @@ A small library that lets you know whether a component is visible on screen or n
 
 Uses the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) which you may want to [polyfill](#polyfill).
 
+This is a semi-port of my React-library [react-is-visible](https://github.com/lessp/react-is-visible) for ReasonReact.
+
 ## Installation
 
 ```bash
