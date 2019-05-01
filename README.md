@@ -24,3 +24,23 @@ let make = () => {
   </h1>;
 };
 ```
+
+## Polyfill
+
+In order to polyfill, install the [polyfill from W3C](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
+
+```bash
+npm install intersection-observer --save
+```
+
+... and import it somewhere before using `ReactIsVisible`
+
+The easiest way would be by doing something like:
+
+```reason
+// App.re
+[%bs.raw {| require("intersection-observer") |}];
+
+[@react.component]
+// ...
+```
