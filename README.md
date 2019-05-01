@@ -2,7 +2,7 @@
 
 A small library that lets you know whether a component is visible on screen or not.
 
-Uses the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver).
+Uses the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) which you may want to [polyfill](#polyfill).
 
 ## Installation
 
@@ -26,6 +26,8 @@ let make = () => {
 ```
 
 ## Polyfill
+
+[Browser compatibility.](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Browser_compatibility)
 
 In order to polyfill, install the [polyfill from W3C](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
 
