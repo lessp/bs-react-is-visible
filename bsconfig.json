@@ -5,11 +5,14 @@
   },
   "sources": [
     {
-      "dir": "src",
-      "subdirs": true
+      "dir": "src"
     },
     {
       "dir": "examples",
+      "type": "dev"
+    },
+    {
+      "dir": "__tests__",
       "type": "dev"
     }
   ],
@@ -21,5 +24,6 @@
   "suffix": ".bs.js",
   "namespace": true,
   "bs-dependencies": ["reason-react", "@glennsl/bs-json", "bs-webapi"],
+  "bs-dev-dependencies": ["bs-react-testing-library", "@glennsl/bs-jest"],
   "refmt": 3
 }
