@@ -17,23 +17,23 @@ let useIsVisible = () => {
   let (isVisible, setIsVisible) = React.useState(() => false);
   let nodeRef = React.useRef(Js.Nullable.null);
 
-  React.useEffect1(
-    () => {
-      let domElement =
-        switch (nodeRef |> React.Ref.current |> Js.Nullable.toOption) {
-        | Some(el) =>
-          VO.watch(el, entry => setIsVisible(_ => entry |> VO.Decode.entry));
-          Some(el);
-        | None => None
-        };
+  React.useEffect0(() => {
+    let handleVisibilityChange = entry =>
+      setIsVisible(_ => entry |> VO.Decode.entry);
 
-      switch (domElement) {
-      | Some(e) => Some(() => VO.unwatch(e))
+    let domElement =
+      switch (nodeRef |> React.Ref.current |> Js.Nullable.toOption) {
+      | Some(el) =>
+        VO.watch(el, handleVisibilityChange);
+        Some(el);
       | None => None
       };
-    },
-    [|nodeRef|],
-  );
+
+    switch (domElement) {
+    | Some(e) => Some(() => VO.unwatch(e))
+    | None => None
+    };
+  });
 
   (isVisible, ReactDOMRe.Ref.domRef(nodeRef));
 };
