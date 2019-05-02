@@ -44,40 +44,27 @@ module Style = {
 
 [@react.component]
 let make = () => {
-  let url =
-    ReasonReactRouter.useUrl(
-      ~serverUrl="https://lessp.github.io/bs-react-is-visible/",
-    );
-
-  let (example, currentUrl) =
-    switch (url.path) {
-    | ["basic"]
-    | [] => (<Basic />, "basic")
-    | ["lazyload"] => (<LazyLoad />, "lazyload")
-    | _ => (
-        <h1 style={ReactDOMRe.Style.make(~paddingLeft="320px", ())}>
-          {"Nothing to see here..." |> React.string}
-        </h1>,
-        "",
-      )
-    };
+  let ((activeExample, active), setActiveExample) =
+    React.useState(() => (<Basic />, "basic"));
 
   <div style=Style.global>
     <nav style=Style.navigation>
       <h1 style=Style.title> {"bs-react-is-visible" |> React.string} </h1>
       <a
-        href="/basic"
+        href="#basic"
         title="Basic"
-        style={Style.link(currentUrl === "basic")}>
+        onClick={_ => setActiveExample(_ => (<Basic />, "basic"))}
+        style={Style.link(active === "basic")}>
         {"Basic" |> React.string}
       </a>
       <a
-        href="/lazyload"
+        href="#lazyload"
         title="LazyLoad"
-        style={Style.link(currentUrl === "lazyload")}>
+        onClick={_ => setActiveExample(_ => (<LazyLoad />, "lazyload"))}
+        style={Style.link(active === "lazyload")}>
         {"Lazy Load" |> React.string}
       </a>
     </nav>
-    example
+    activeExample
   </div>;
 };
