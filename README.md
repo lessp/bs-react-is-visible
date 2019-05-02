@@ -8,6 +8,10 @@ Uses the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web
 
 This is a semi-port of my React-library [react-is-visible](https://github.com/lessp/react-is-visible) for ReasonReact.
 
+### Live Examples
+
+[https://lessp.github.io/bs-react-is-visible/](https://lessp.github.io/bs-react-is-visible/)
+
 ## Installation
 
 ```bash
