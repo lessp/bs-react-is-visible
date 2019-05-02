@@ -9,6 +9,7 @@
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
     "dev": "parcel examples/index.html",
+    "example:build": "rm -rf docs && parcel build examples/index.html -d docs",
     "example": "npm run build && npm run dev",
     "start": "bsb -make-world -w",
     "test": "jest",
