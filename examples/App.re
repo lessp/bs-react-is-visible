@@ -44,7 +44,10 @@ module Style = {
 
 [@react.component]
 let make = () => {
-  let url = ReasonReactRouter.useUrl();
+  let url =
+    ReasonReactRouter.useUrl(
+      ~serverUrl="https://lessp.github.io/bs-react-is-visible/",
+    );
 
   let (example, currentUrl) =
     switch (url.path) {
