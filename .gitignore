@@ -7,3 +7,4 @@
 npm-debug.log
 /lib
 /node_modules/
+/src/*.bs.js

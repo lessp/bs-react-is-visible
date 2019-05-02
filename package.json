@@ -35,10 +35,9 @@
     "reason-react": ">=0.7.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.4",
     "@glennsl/bs-json": "^3.0.0",
     "bs-webapi": "^0.14.3",
-    "react-is-visible": "^1.0.3"
+    "react-is-visible": "^1.0.4"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.8",
