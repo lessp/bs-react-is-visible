@@ -11,6 +11,7 @@
     "dev": "parcel examples/index.html",
     "example:build": "rm -rf docs && parcel build examples/index.html -d docs",
     "example": "npm run build && npm run dev",
+    "prepare": "npm run build",
     "start": "bsb -make-world -w",
     "test": "jest",
     "test:watch": "jest --watch"
