@@ -29,11 +29,11 @@ let make = () => {
 
   React.useEffect1(
     () => {
-      isVisible
-        ? setItems(currentItems =>
-            currentItems |> Array.append([|0, 0, 0, 0|])
-          )
-        : ();
+      if (isVisible) {
+        setItems(currentItems =>
+          currentItems |> Array.append([|0, 0, 0, 0|])
+        );
+      };
 
       None;
     },
