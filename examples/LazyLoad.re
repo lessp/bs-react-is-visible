@@ -25,13 +25,13 @@ module Style = {
 [@react.component]
 let make = () => {
   let (isVisible, ref) = ReactIsVisible.useIsVisible();
-  let (items, setItems) = React.useState(() => [|0, 0, 0, 0|]);
+  let (items, setItems) = React.useState(() => Array.make(4, 0));
 
   React.useEffect1(
     () => {
       if (isVisible) {
         setItems(currentItems =>
-          currentItems |> Array.append([|0, 0, 0, 0|])
+          currentItems |> Array.append(Array.make(4, 0))
         );
       };
 
