@@ -28,7 +28,7 @@ let make = () => {
   let (isVisible, ref) = ReactIsVisible.useIsVisible();
 
   <h1 ref>
-    {(isVisible ? "I'm visible!" : "I'm not visibile") |> React.string}
+    {(isVisible ? "I'm visible!" : "I'm not visible") |> React.string}
   </h1>;
 };
 ```
