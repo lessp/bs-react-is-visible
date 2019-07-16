@@ -1,16 +1,15 @@
 module VO = {
+  type intersectionObserverEntry = {. "isIntersecting": bool};
+
   [@bs.val] [@bs.scope "VisibilityObserver"] [@bs.module "react-is-visible"]
   external unwatch: Dom.element => unit = "unwatch";
 
   [@bs.val] [@bs.scope "VisibilityObserver"] [@bs.module "react-is-visible"]
-  external watch: (Dom.element, Js.Json.t => unit) => unit = "watch";
+  external watch: (Dom.element, intersectionObserverEntry => unit) => unit =
+    "watch";
 
   [@bs.val] [@bs.scope "VisibilityObserver"] [@bs.module "react-is-visible"]
-  external getSubscribers: unit => 't = "getSubscribers";
-
-  module Decode = {
-    let entry = entry => Json.Decode.(entry |> field("isIntersecting", bool));
-  };
+  external getSubscribers: unit => 'subscriberList = "getSubscribers";
 };
 
 let useIsVisible = () => {
@@ -19,7 +18,7 @@ let useIsVisible = () => {
 
   React.useEffect0(() => {
     let handleVisibilityChange = entry =>
-      setIsVisible(_ => entry |> VO.Decode.entry);
+      setIsVisible(_prevIntersecting => entry##isIntersecting);
 
     let domElement =
       switch (nodeRef |> React.Ref.current |> Js.Nullable.toOption) {
