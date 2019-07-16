@@ -1,7 +1,7 @@
 {
   "name": "bs-react-is-visible",
   "description": "A small library for ReasonReact to know if an element is visible on screen or not",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publishConfig": {
     "access": "public"
   },
