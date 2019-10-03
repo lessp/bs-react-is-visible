@@ -22,7 +22,11 @@ jobs:
         npm run build
         npm run example:build
         npm test
+      env:
+        CI: true
     - name: Generate changelog, release version to npm and Github
       run: npx semantic-release
       env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         CI: true
