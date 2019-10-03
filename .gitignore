@@ -8,3 +8,6 @@ npm-debug.log
 /lib
 /node_modules/
 /src/*.bs.js
+
+# don't ignore snapshots
+!/lib/js/__tests__/__snapshots__/*
