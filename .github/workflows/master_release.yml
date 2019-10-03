@@ -1,0 +1,28 @@
+name: Master Release
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.16.3
+    - name: Install, build and test
+      run: |
+        npm install
+        npm run build
+        npm run example:build
+        npm test
+    - name: Generate changelog, release version to npm and Github
+      run: npx semantic-release
+      env:
+        CI: true
