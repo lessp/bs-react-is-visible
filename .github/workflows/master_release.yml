@@ -27,6 +27,6 @@ jobs:
     - name: Generate changelog, release version to npm and Github
       run: npx semantic-release
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         CI: true
