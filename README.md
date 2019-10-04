@@ -38,11 +38,9 @@ let make = () => {
 ### With options
 
 ```reason
-let options: ReactIsVisible.options = {triggerOnce: true};
-
 [@react.component]
 let make = () => {
-  let (isVisible, ref) = ReactIsVisible.useIsVisible(~options, ());
+  let (isVisible, ref) = ReactIsVisible.useIsVisible(~options={once: true}, ());
 
   <h1 ref>
     {(isVisible ? "I'm triggered as visible once!" : "I'm not visible") |> React.string}

@@ -12,8 +12,8 @@ module VO = {
   external getSubscribers: unit => 'subscriberList = "getSubscribers";
 };
 
-type options = {triggerOnce: bool};
-let defaultOptions = {triggerOnce: false};
+type options = {once: bool};
+let defaultOptions = {once: false};
 
 let useIsVisible = (~options=defaultOptions, ()) => {
   let (isVisible, setIsVisible) = React.useState(() => false);
@@ -23,7 +23,7 @@ let useIsVisible = (~options=defaultOptions, ()) => {
     let handleVisibilityChange = (el, entry) => {
       setIsVisible(_prevIntersecting => entry##isIntersecting);
 
-      if (entry##isIntersecting && options.triggerOnce) {
+      if (entry##isIntersecting && options.once) {
         VO.unwatch(el);
       };
     };

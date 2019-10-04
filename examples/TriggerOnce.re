@@ -2,11 +2,10 @@ module Style = {
   let fixed = ReactDOMRe.Style.make(~position="fixed", ~right="2rem", ());
 };
 
-let options: ReactIsVisible.options = {triggerOnce: true};
-
 [@react.component]
 let make = () => {
-  let (isVisible, ref) = ReactIsVisible.useIsVisible(~options, ());
+  let (isVisible, ref) =
+    ReactIsVisible.useIsVisible(~options={once: true}, ());
 
   <div style=Basic.Style.wrapper>
     <h1> {"Scroll down" |> React.string} </h1>
