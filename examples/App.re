@@ -64,6 +64,13 @@ let make = () => {
         style={Style.link(active === "lazyload")}>
         {"Lazy Load" |> React.string}
       </a>
+      <a
+        href="#triggeronce"
+        title="TriggerOnce"
+        onClick={_ => setActiveExample(_ => (<TriggerOnce />, "triggeronce"))}
+        style={Style.link(active === "triggeronce")}>
+        {"Trigger Once" |> React.string}
+      </a>
     </nav>
     activeExample
   </div>;

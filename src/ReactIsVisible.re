@@ -12,19 +12,28 @@ module VO = {
   external getSubscribers: unit => 'subscriberList = "getSubscribers";
 };
 
-let useIsVisible = () => {
+type options = {once: bool};
+let defaultOptions = {once: false};
+
+let useIsVisible = (~options=defaultOptions, ()) => {
   let (isVisible, setIsVisible) = React.useState(() => false);
   let nodeRef = React.useRef(Js.Nullable.null);
 
   React.useEffect0(() => {
-    let handleVisibilityChange = entry =>
+    let handleVisibilityChange = (el, entry) => {
       setIsVisible(_prevIntersecting => entry##isIntersecting);
+
+      if (entry##isIntersecting && options.once) {
+        VO.unwatch(el);
+      };
+    };
 
     let domElement =
       switch (nodeRef |> React.Ref.current |> Js.Nullable.toOption) {
       | Some(el) =>
-        VO.watch(el, handleVisibilityChange);
+        VO.watch(el, entry => handleVisibilityChange(el, entry));
         Some(el);
+
       | None => None
       };
 
