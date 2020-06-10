@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "bs-webapi": "^0.14.3",
-    "react-is-visible": "^1.0.4"
+    "react-is-visible": "lessp/react-is-visible#94381e9"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.8",
